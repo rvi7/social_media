@@ -1,15 +1,16 @@
 <%= form_with model: article do |form| %>
-  <div>
-    <%= form.label :title %><br>
-    <%= form.text_field :title %>
+
+  <div class="article-form-title">
+<!--    <%#= form.label :title %><br>-->
+    <%#= form.text_field :title ,placeholder: "Title"%>
   </div>
 
-  <div>
-    <%= form.label :body %><br>
-    <%= form.text_area :body %><br>
+  <div class="article-form-body">
+<!--    <%#= form.label :body %><br>-->
+    <%= form.text_area :body,placeholder: "Whats happening ?" %><br>
   </div>
 
-  <div>
-    <%= form.submit %>
+  <div class="article-form-submit">
+    <%= form.submit "Post"%>
   </div>
 <% end %>

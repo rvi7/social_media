@@ -1,14 +1,36 @@
-<h1>Hello, Rails!</h1>
-<h1>Articles</h1>
+<div class="container">
+  <div class="header">
+    <div class="logo">
+      <%=image_tag("Vector.png") %>
+      <%=image_tag("Maze.png") %>
+    </div>
+    <div class="search">
+      <input type="text" placeholder="Search">
+    </div>
+  </div>
 
-<ul>
-  <% @articles.each do |article| %>
-    <li>
-      <%= link_to article.title, article %>
-    </li>
-  <% end %>
+  <div class="Body">
+    <div class="article-update">
+      <div class="post-img">
+        <%=image_tag("Vector.png") %>
+      </div>
+        <%= render "form", article: @article %>
+    </div>
 
-  <%= render "form", article: @article %>
-</ul>
+    <% @articles.each do |article| %><br>
+      <div class="articles-display">
+        <div class="articles-title">
+          <h2><%= article.title%></h2>
+        </div>
+        <div class="articles-body">
+         <%= link_to article.body, article %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+
+</div>
+
+
 
 
